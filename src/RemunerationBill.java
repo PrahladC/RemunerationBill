@@ -28,6 +28,7 @@ public class RemunerationBill extends JDialog {
 	private JTextField Address3;
 	private JTextField Address4;
 	String NameString,AddLine1,AddLine2,AddLine3,AddLine4;
+	String temp; //Test for git delete later 
 	
 	
 
