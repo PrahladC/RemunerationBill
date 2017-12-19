@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class BillPrint 
 {
-	////Basic 2 Functions For MVC Design---------------------------------------------------------------
+	//Basic 2 Functions For MVC Design---------------------------------------------------------------
 	private static BillPrint instance = null;  /* ===== singleton details ===== */
 	protected BillPrint() 
 	{/* nothing needed, but this prevents a public no-arg  constructor from being created automatically */}
