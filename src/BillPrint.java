@@ -19,7 +19,7 @@ public class BillPrint
 	{/* nothing needed, but this prevents a public no-arg  constructor from being created automatically */}
 	public static BillPrint getInstance()
 	{ if (instance==null)	{ instance = new BillPrint();} 	return instance;}
-      //------------------------------------------------------------------------------------------------
+      // ------------------------------------------------------------------------------------------------
     int StudCount;
 	private String ExaminerName;
     private String Subject;
