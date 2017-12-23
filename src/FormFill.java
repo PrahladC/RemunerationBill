@@ -399,7 +399,7 @@ public class FormFill extends JFrame {
 		gbc_lblWhatToPrint.gridy = 17;
 		getContentPane().add(lblWhatToPrint, gbc_lblWhatToPrint);
 		
-///////  C H E C K B O  X E S     //////////
+///////  C H E C K B O  X E S     ////////////
 		
 		final JCheckBox chckbxFirstPage = new JCheckBox("First Page of Remuneration Bill");
 		chckbxFirstPage.setFont(new Font("Times New Roman", Font.BOLD, 14));
