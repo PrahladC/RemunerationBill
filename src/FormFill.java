@@ -35,6 +35,7 @@ public class FormFill extends JFrame {
 	private static final long serialVersionUID = -6184290585772556149L;
 
 	BillPrint Bill;
+	Rem_CreatPdf cp = new Rem_CreatPdf();
 	
 	protected static final String Subject = null;
 	private JFrame frame;
@@ -431,7 +432,7 @@ public class FormFill extends JFrame {
 //////      B U T T O N S    /////
 		
 		final JButton btnLoad = new JButton("LOAD");
-		btnLoad.setPreferredSize(new Dimension(100, 25));
+		btnLoad.setPreferredSize(new Dimension(115, 25));
 		btnLoad.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		GridBagConstraints gbc_btnLoad = new GridBagConstraints();
 		gbc_btnLoad.anchor = GridBagConstraints.EAST;
@@ -472,7 +473,7 @@ public class FormFill extends JFrame {
 
 					
 		final JButton btnSave = new JButton("SAVE");
-		btnSave.setPreferredSize(new Dimension(100, 25));
+		btnSave.setPreferredSize(new Dimension(115, 25));
 		btnSave.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		GridBagConstraints gbc_btnSave = new GridBagConstraints();
 		gbc_btnSave.anchor = GridBagConstraints.EAST;
@@ -518,7 +519,7 @@ public class FormFill extends JFrame {
 		});						
 		
 		JButton btnPrint = new JButton("PRINT");
-		btnPrint.setPreferredSize(new Dimension(100, 25));
+		btnPrint.setPreferredSize(new Dimension(115, 25));
 		btnPrint.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		GridBagConstraints gbc_btnPrint = new GridBagConstraints();
 		gbc_btnPrint.fill = GridBagConstraints.VERTICAL;
@@ -530,7 +531,7 @@ public class FormFill extends JFrame {
 		
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				dispose();
+//				dispose();
 	            Bill.setDetails(ExaminerName.getText(), subject.getText(), year.getText(), IndexOfEC.getText(), 
 	            		        COE.getText(),NODE.getText(), NOSE.getText(), RemPerStu.getText(), 
 	            		        CollNemOfExaminer.getText(), ColIndCdOfExmner.getText(),
@@ -566,8 +567,30 @@ public class FormFill extends JFrame {
 			}
 		});
 		
+		
+		JButton btnPrintPdf = new JButton("PRINT PDF");
+		btnPrintPdf.setPreferredSize(new Dimension(115, 25));
+		btnPrintPdf.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		GridBagConstraints gbc_btnPrintPdf = new GridBagConstraints();
+		gbc_btnPrintPdf.fill = GridBagConstraints.VERTICAL;
+		gbc_btnPrintPdf.anchor = GridBagConstraints.EAST;
+		gbc_btnPrintPdf.insets = new Insets(0, 0, 5, 5);
+		gbc_btnPrintPdf.gridx = 0;
+		gbc_btnPrintPdf.gridy = 21;
+		getContentPane().add(btnPrintPdf, gbc_btnPrintPdf);
+		
+		btnPrintPdf.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+//				dispose();
+			cp.creatPdf();	
+				
+			}
+		});
+
+		
+		
 		JButton btnCansel = new JButton("CANCEL");
-		btnCansel.setPreferredSize(new Dimension(100, 25));
+		btnCansel.setPreferredSize(new Dimension(115, 25));
 		btnCansel.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		GridBagConstraints gbc_btnCansel = new GridBagConstraints();
 		gbc_btnCansel.fill = GridBagConstraints.VERTICAL;
