@@ -45,25 +45,25 @@ public class FormFill extends JFrame {
 	private JTextField Address3;
 	private JTextField Address4;        */
 // 	String Addline,Addline1,Addline2,Addline3,Addline4;
-	private JTextField ExaminerName;
-	private JTextField subject;
-	private JTextField year;
-	private JTextField COE;                //  COE  =  Center Of Exam
-	private JTextField IndexOfEC;           //  IndexOfEC  =  Index Number Of Exam Center  
-	private JTextField NODE;               //  NODE  =  Number Of Days Of Examination  
-	private JTextField NOSE;               //  NOSE  =  Number Of Students Examined
-	private JTextField RemPerStu;          //  RemPerStu  =  Remuneration Per student
-	private JTextField AddLine1;           //  AddLine1  =  Address Line 1
-	private JTextField AddLine2;
-	private JTextField AddLine3;
-	private JTextField AddLine4;
-	private JTextField CollNemOfExaminer;  //  College Name Of Examiner
-	private JTextField ColIndCdOfExmner;   //  //  ColIndCdOfExmner  =  College Index Code Of Examiner
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField StartDate;
-    private JTextField EndDate;
-    private JTextField ExceptOn;
+	public JTextField ExaminerName;
+	public JTextField subject;
+	public JTextField year;
+	public JTextField COE;                //  COE  =  Center Of Exam
+	public JTextField IndexOfEC;           //  IndexOfEC  =  Index Number Of Exam Center  
+	public JTextField NODE;               //  NODE  =  Number Of Days Of Examination  
+	public JTextField NOSE;               //  NOSE  =  Number Of Students Examined
+	public JTextField RemPerStu;          //  RemPerStu  =  Remuneration Per student
+	public JTextField AddLine1;           //  AddLine1  =  Address Line 1
+	public JTextField AddLine2;
+	public JTextField AddLine3;
+	public JTextField AddLine4;
+	public JTextField CollNemOfExaminer;  //  College Name Of Examiner
+	public JTextField ColIndCdOfExmner;   //  //  ColIndCdOfExmner  =  College Index Code Of Examiner
+	public JTextField textField;
+	public JTextField textField_1;
+	public JTextField StartDate;
+    public JTextField EndDate;
+    public JTextField ExceptOn;
     
     ArrayList<String> strArray = new ArrayList<String>();
 	

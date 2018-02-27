@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 import com.itextpdf.text.Document;
@@ -9,6 +10,7 @@ import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.CMYKColor;
 import com.itextpdf.text.pdf.ColumnText;
@@ -20,12 +22,14 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class Rem_CreatPdf {
 	
 	public String GetData(JTable table, int row_index, int col_index) {  return (String) table.getValueAt(row_index, col_index); }
-
-//	FormFill FF = new FormFill();
+	public void show(String msg) {JOptionPane.showMessageDialog(null, msg);}   ///for debugging
+	FormFill FF;
 	
 	public void creatPdf(){
-		Document document = new Document();
+		FF = new FormFill();
 		try{
+			
+			Document document = new Document();
 			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Remuneration Bill.pdf"));
 			document.open();
 			
@@ -55,13 +59,16 @@ public class Rem_CreatPdf {
 //	        canvas.lineTo(450, 786);
 //	        canvas.lineTo(450, 806);		        
 
-	        Rectangle rect1 = new Rectangle(475, 786, 559, 806);
 	        Rectangle rect0 = new Rectangle(36, 36, 559, 806);
 		    rect0.setBorder(Rectangle.BOX);
 	        rect0.setBorderWidth(1);
+		    rect0.setBorder(Rectangle.BOX);
+	        rect0.setBorderWidth(1);
+	        canvas.rectangle(rect0);
+
+	        Rectangle rect1 = new Rectangle(475, 786, 559, 806);
 		    rect1.setBorder(Rectangle.BOX);
 	        rect1.setBorderWidth(1);
-	        canvas.rectangle(rect0);
 	        canvas.rectangle(rect1);
 	        ColumnText ct = new ColumnText(canvas);
 	        ct.setSimpleColumn(476, 786, 559, 810);
@@ -77,10 +84,20 @@ public class Rem_CreatPdf {
 	        document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
 	        canvas.moveTo(160, 590);
 		    canvas.lineTo(559, 590);
-		    document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
-		    rect0.setBorder(Rectangle.BOX);
-	        rect0.setBorderWidth(1);
-	        canvas.rectangle(rect0);
+		    
+//		    document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
+		    
+		    
+		    String examinerName = FF.ExaminerName.getText();                        //   "Foobar Film Festival";
+		    show(examinerName);
+		    Phrase phrase = new Phrase(examinerName, bold);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 200, 572, 0);
+//		    ColumnText.showTextAligned(canvas, Element.ALIGN_RIGHT, phrase, 200, 536, 0);
+//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 500, 0);
+//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 464, 30);
+//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 428, -30);
+
+		    
 	        
 	        canvas.closePathStroke();       			
 			document.close();
