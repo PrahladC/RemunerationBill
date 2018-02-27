@@ -35,7 +35,7 @@ public class FormFill extends JFrame {
 	private static final long serialVersionUID = -6184290585772556149L;
 
 	BillPrint Bill;
-	Rem_CreatPdf cp = new Rem_CreatPdf();
+	Rem_CreatPdf cp = new Rem_CreatPdf(this);
 	
 	protected static final String Subject = null;
 	private JFrame frame;

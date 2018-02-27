@@ -103,14 +103,14 @@ public class BillPrint
     	          
     	          newFont = new Font("Liberation Serif", Font.BOLD, 12);
     	          pg.setFont(newFont);
-    	          String S3 = "H.S.C. PRACTICAL EXAMINATION FEBRUARY/OCTOBER";     // String width = 333
+    	          String S3 = "H.S.C. PRACTICAL EXAMINATION FEBRUARY/JULY";     // String width = 333
     	          
     	          int YrSp = (Center - (int) (metrics.stringWidth(S3))/2) + metrics.stringWidth(S3) ;
     	          
     	          pg.drawString(Year,YrSp + 10,95);
 //    	          pg.drawString(Year,480,95);
 //    	          show(metrics.stringWidth(S3));
-//    	          show(metrics.stringWidth("H.S.C. PRACTICAL EXAMINATION FEBRUARY/OCTOBER"));
+//    	          show(metrics.stringWidth("H.S.C. PRACTICAL EXAMINATION FEBRUARY/JULY"));
     	          String S4 = "BILL OF REMUNERATION OF INTERNAL/EXTERNAL EXAMINER";
     	          pg.drawString(S3, Center - (int) (metrics.stringWidth(S3))/2 , 95 );
  //   	          pg.drawString(S3, 125, 95);
@@ -143,9 +143,9 @@ public class BillPrint
     	          pg.drawString(Subject.toUpperCase(), x*6 + metrics.stringWidth("Subject") + 3, 245);
     	          pg.drawLine( x*6 + metrics.stringWidth("Subject") + 2, 247, RBL, 247); 
     	          
-    	          pg.drawString("Practical Examination February/October", x, 265);
-//    	          show(metrics.stringWidth("Practical Examination February/October"));
-    	          int Str14 = metrics.stringWidth("Practical Examination February/October");
+    	          pg.drawString("Practical Examination February/July", x, 265);
+//    	          show(metrics.stringWidth("Practical Examination February/July"));
+    	          int Str14 = metrics.stringWidth("Practical Examination February/July");
     	          pg.drawLine(x + Str14 + 5, 267, 2*x + Str14, 267); 
     	          pg.drawString(Year, x + Str14 + 10, 265);
  //   	          int type = 2*x - metrics.stringWidth("at the") + 2;

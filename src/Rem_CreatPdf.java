@@ -23,10 +23,15 @@ public class Rem_CreatPdf {
 	
 	public String GetData(JTable table, int row_index, int col_index) {  return (String) table.getValueAt(row_index, col_index); }
 	public void show(String msg) {JOptionPane.showMessageDialog(null, msg);}   ///for debugging
+	
 	FormFill FF;
 	
+	public Rem_CreatPdf(FormFill ff){
+		this.FF = ff;
+	}
+	
 	public void creatPdf(){
-		FF = new FormFill();
+//		FF = new FormFill();
 		try{
 			
 			Document document = new Document();
@@ -82,16 +87,17 @@ public class Rem_CreatPdf {
 	            document.add(new Paragraph("   "+address[i]));
 	        }
 	        document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
-	        canvas.moveTo(160, 590);
-		    canvas.lineTo(559, 590);
+	        canvas.moveTo(160, 598);
+		    canvas.lineTo(559, 598);
+		    		    
+		    Font font = new Font(FontFamily.TIMES_ROMAN, 16, Font.NORMAL);
+		    String examinerName = FF.ExaminerName.getText().toUpperCase();     //   Examiner's Name
+		   
+		    document.add(new Paragraph("\n   Subject"));
+		    String sub = FF.subject.getText();                                 //   Subject
 		    
-//		    document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
-		    
-		    
-		    String examinerName = FF.ExaminerName.getText();                        //   "Foobar Film Festival";
-		    show(examinerName);
-		    Phrase phrase = new Phrase(examinerName, bold);
-		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 200, 572, 0);
+		    Phrase phrase = new Phrase(examinerName, font);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 170, 600, 0);
 //		    ColumnText.showTextAligned(canvas, Element.ALIGN_RIGHT, phrase, 200, 536, 0);
 //		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 500, 0);
 //		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 464, 30);
