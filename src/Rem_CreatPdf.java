@@ -34,6 +34,7 @@ public class Rem_CreatPdf {
 //		FF = new FormFill();
 		try{
 			
+			int ltmargin = 36, ht = 25, Line1AtHt = 585;
 			Document document = new Document();
 			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Remuneration Bill.pdf"));
 			document.open();
@@ -48,7 +49,7 @@ public class Rem_CreatPdf {
 
 			Paragraph p = new Paragraph("\n\nMAHARASHTRA STATE BOARD OF SECONDARY & HIGHER SECONDARY EDUCATION\n" +
 					                      "MUMBAI DIVISIONAL BOARD, VASHI, NAVIMUMBAI  400703\n" +
-					                      "H.S.C. PRACTICAL EXAMINATION FEBRUARY/OCTOBER\nBILL OF REMUNERATION OF INTERNAL/EXTERNAL EXAMINER", bold);
+					                      "H.S.C. PRACTICAL EXAMINATION FEBRUARY/JULY\nBILL OF REMUNERATION OF INTERNAL/EXTERNAL EXAMINER", bold);
 //			p.getFont().setSize(14);
 			PdfPCell c0 = new PdfPCell(p);
 			c0.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -58,11 +59,6 @@ public class Rem_CreatPdf {
 		    PdfContentByte canvas = writer.getDirectContent();
 		    CMYKColor blackColor = new CMYKColor(0.f, 0.f, 0.f, 1.f);
 		    canvas.setColorStroke(blackColor);		        
-
-//		    canvas.moveTo(559, 806);
-//	        canvas.lineTo(559, 786);
-//	        canvas.lineTo(450, 786);
-//	        canvas.lineTo(450, 806);		        
 
 	        Rectangle rect0 = new Rectangle(36, 36, 559, 806);
 		    rect0.setBorder(Rectangle.BOX);
@@ -82,26 +78,75 @@ public class Rem_CreatPdf {
 	        
 	        String address[] = {"The Divisional Secretary,","Maharashtra State Board of Secondary","& Higher Secondary Education",
 		              "Mumbai Divisional Board,", "Vashi, Navi Mumbai  400703"};
-
+	        Font font = new Font(FontFamily.TIMES_ROMAN, 13, Font.NORMAL);
 	        for (int i = 0; i < address.length; i++) {
-	            document.add(new Paragraph("   "+address[i]));
+	            document.add(new Paragraph("   "+address[i], font));
 	        }
-	        document.add(new Paragraph("\n   Name Shri/Smt/Miss"));
-	        canvas.moveTo(160, 598);
-		    canvas.lineTo(559, 598);
-		    		    
-		    Font font = new Font(FontFamily.TIMES_ROMAN, 16, Font.NORMAL);
-		    String examinerName = FF.ExaminerName.getText().toUpperCase();     //   Examiner's Name
-		   
-		    document.add(new Paragraph("\n   Subject"));
-		    String sub = FF.subject.getText();                                 //   Subject
+	        String line1 = "Name Shri/Smt/Miss";  int lengthline1 = line1.length();
+	        String line2 = "Subject";
+	        String line3 = "Practical Examination February / July";
+	        String line4 = "at the";
+	        String line5 = "IndexNo.of Jr.College"; 
+	        String line6 = "Amount due, to meas an EXTERNAL/INTERNAL Examiner at the";
+	        String line7 = "Examination center... Number ofdays of examination";	        
+	        String line8 = "Actual Total number of candidates examined by me";
+	        String line9 = "Excluding Absentees";
+	        String line10 = "Rs.      per candidate.";
+	        String line11 = "Minimum of Rs.50/- irrespective of the number of candidates";
+	        
+	        ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line1, font), ltmargin+10, Line1AtHt, 0);
+	        canvas.moveTo(170, Line1AtHt-2);    canvas.lineTo(559, Line1AtHt-2);
 		    
-		    Phrase phrase = new Phrase(examinerName, font);
-		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 170, 600, 0);
-//		    ColumnText.showTextAligned(canvas, Element.ALIGN_RIGHT, phrase, 200, 536, 0);
-//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 500, 0);
-//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 464, 30);
-//		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, phrase, 200, 428, -30);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line2, font), ltmargin+10, Line1AtHt-ht, 0);
+		    canvas.moveTo(90, Line1AtHt-ht-2);    canvas.lineTo(250, Line1AtHt-ht-2);
+
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line3, font), ltmargin+10, Line1AtHt-2*ht, 0);
+		    canvas.moveTo(260, Line1AtHt-2*ht-2);    canvas.lineTo(320, Line1AtHt-2*ht-2);
+
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line4, font), ltmargin+10, Line1AtHt-3*ht, 0);
+		    canvas.moveTo(80, Line1AtHt-3*ht-2);    canvas.lineTo(345, Line1AtHt-3*ht-2);
+
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line5, font), 355, Line1AtHt-3*ht, 0);
+		    canvas.moveTo(475, Line1AtHt-3*ht-2);    canvas.lineTo(559, Line1AtHt-3*ht-2);
+		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line6, font), ltmargin+10, Line1AtHt-11*ht/2, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line7, font), ltmargin+10, Line1AtHt-13*ht/2, 0);
+		    canvas.moveTo(350, Line1AtHt-(13*ht/2)-2);    canvas.lineTo(400, Line1AtHt-(13*ht/2)-2);
+		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line8, font), ltmargin+10, Line1AtHt-15*ht/2, 0);
+		    canvas.moveTo(350, Line1AtHt-(15*ht/2)-2);    canvas.lineTo(400, Line1AtHt-(15*ht/2)-2);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line9, font), ltmargin+10, Line1AtHt-17*ht/2, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line10, font), ltmargin+10, Line1AtHt-19*ht/2, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line11, font), ltmargin+10, Line1AtHt-21*ht/2, 0);
+			    
+		    
+		    
+		    canvas.moveTo(ltmargin, Line1AtHt-4*ht);        canvas.lineTo(559, Line1AtHt-4*ht);
+		    canvas.moveTo(ltmargin, Line1AtHt-5*ht+5);    canvas.lineTo(559, Line1AtHt-5*ht+5);
+		    canvas.moveTo(ltmargin, Line1AtHt-11*ht);      canvas.lineTo(559, Line1AtHt-11*ht);
+		    canvas.moveTo(ltmargin, Line1AtHt-12*ht+5);   canvas.lineTo(559, Line1AtHt-12*ht+5);
+		    canvas.moveTo(400, Line1AtHt-4*ht);           canvas.lineTo(400, Line1AtHt-12*ht+5);     //  Vertical Line
+		    canvas.moveTo(360, Line1AtHt-11*ht);           canvas.lineTo(360, Line1AtHt-12*ht+5);
+		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, new Paragraph("Particulars", font), 210, Line1AtHt-5*ht+10, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, new Paragraph("Amount", font), 475, Line1AtHt-5*ht+10, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, new Paragraph("Total", font), 380, Line1AtHt-12*ht+10, 0);
+		    
+		    		    
+		    Font font1 = new Font(FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
+		    String examinerName = FF.ExaminerName.getText().toUpperCase();     //   Examiner's Name
+		    String sub = FF.subject.getText().toUpperCase();                                 //   Subject
+		    String yr = FF.year.getText();
+		    String coe = FF.COE.getText();
+		    String indexofec = FF.IndexOfEC.getText();
+		    
+		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(examinerName, font1), 175, Line1AtHt, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(sub, font1), 95, Line1AtHt-ht, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(yr, font1), 265, Line1AtHt-2*ht, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(coe, font1), 85, Line1AtHt-3*ht, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(indexofec, font1), 480, Line1AtHt-3*ht, 0);
+		    
 
 		    
 	        
