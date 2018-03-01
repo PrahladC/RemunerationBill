@@ -452,6 +452,7 @@ public class FormFill extends JFrame {
 		        chooser.setFileFilter(filter);
 //		        chooser.setCurrentDirectory(new File("E:/RemunertionBill"));
 		        chooser.setCurrentDirectory(new File("/home/prahlad/Prahlad/RemBILL"));
+		        chooser.setCurrentDirectory(new File("/home/prahallad/prahlad"));
 		       
 		        int option = chooser.showOpenDialog(btnLoad);
 		        
