@@ -78,7 +78,7 @@ public class Rem_CreatPdf {
 	        
 	        String address[] = {"The Divisional Secretary,","Maharashtra State Board of Secondary","& Higher Secondary Education",
 		              "Mumbai Divisional Board,", "Vashi, Navi Mumbai  400703"};
-	        Font font = new Font(FontFamily.TIMES_ROMAN, 13, Font.NORMAL);
+	        Font font = new Font(FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
 	        for (int i = 0; i < address.length; i++) {
 	            document.add(new Paragraph("   "+address[i], font));
 	        }
@@ -87,12 +87,15 @@ public class Rem_CreatPdf {
 	        String line3 = "Practical Examination February / July";
 	        String line4 = "at the";
 	        String line5 = "IndexNo.of Jr.College"; 
-	        String line6 = "Amount due, to meas an EXTERNAL/INTERNAL Examiner at the";
-	        String line7 = "Examination center... Number ofdays of examination";	        
+	        String line6 = "Amount due, to me as an EXTERNAL/INTERNAL Examiner";
+	        String line7 = "at the Examination center-Number ofdays of examination";	        
 	        String line8 = "Actual Total number of candidates examined by me";
 	        String line9 = "Excluding Absentees";
-	        String line10 = "Rs.      per candidate.";
+	        String line10 = "Rs.        per candidate.";
 	        String line11 = "Minimum of Rs.50/- irrespective of the number of candidates";
+	        String line12 = "I hereby undertake to refund if any amount paid to me in excess of the amount due";
+	        String line13 = "Name of Jr. College where teaching";
+	        
 	        
 	        ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line1, font), ltmargin+10, Line1AtHt, 0);
 	        canvas.moveTo(170, Line1AtHt-2);    canvas.lineTo(559, Line1AtHt-2);
@@ -106,20 +109,20 @@ public class Rem_CreatPdf {
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line4, font), ltmargin+10, Line1AtHt-3*ht, 0);
 		    canvas.moveTo(80, Line1AtHt-3*ht-2);    canvas.lineTo(345, Line1AtHt-3*ht-2);
 
-		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line5, font), 355, Line1AtHt-3*ht, 0);
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line5, font), 350, Line1AtHt-3*ht, 0);
 		    canvas.moveTo(475, Line1AtHt-3*ht-2);    canvas.lineTo(559, Line1AtHt-3*ht-2);
 		    
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line6, font), ltmargin+10, Line1AtHt-11*ht/2, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line7, font), ltmargin+10, Line1AtHt-13*ht/2, 0);
-		    canvas.moveTo(350, Line1AtHt-(13*ht/2)-2);    canvas.lineTo(400, Line1AtHt-(13*ht/2)-2);
+		    canvas.moveTo(370, Line1AtHt-(13*ht/2)-2);    canvas.lineTo(400, Line1AtHt-(13*ht/2)-2);
 		    
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line8, font), ltmargin+10, Line1AtHt-15*ht/2, 0);
 		    canvas.moveTo(350, Line1AtHt-(15*ht/2)-2);    canvas.lineTo(400, Line1AtHt-(15*ht/2)-2);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line9, font), ltmargin+10, Line1AtHt-17*ht/2, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line10, font), ltmargin+10, Line1AtHt-19*ht/2, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line11, font), ltmargin+10, Line1AtHt-21*ht/2, 0);
-			    
-		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line12, font), ltmargin+10, Line1AtHt-25*ht/2, 0);
+		   
 		    
 		    canvas.moveTo(ltmargin, Line1AtHt-4*ht);        canvas.lineTo(559, Line1AtHt-4*ht);
 		    canvas.moveTo(ltmargin, Line1AtHt-5*ht+5);    canvas.lineTo(559, Line1AtHt-5*ht+5);
@@ -127,6 +130,18 @@ public class Rem_CreatPdf {
 		    canvas.moveTo(ltmargin, Line1AtHt-12*ht+5);   canvas.lineTo(559, Line1AtHt-12*ht+5);
 		    canvas.moveTo(400, Line1AtHt-4*ht);           canvas.lineTo(400, Line1AtHt-12*ht+5);     //  Vertical Line
 		    canvas.moveTo(360, Line1AtHt-11*ht);           canvas.lineTo(360, Line1AtHt-12*ht+5);
+		    canvas.moveTo(325, Line1AtHt-14*ht+5);   canvas.lineTo(559, Line1AtHt-14*ht+5);   //  Above signature
+		    canvas.moveTo(325, Line1AtHt-15*ht-5);   canvas.lineTo(559, Line1AtHt-15*ht-5);
+		    canvas.moveTo(325, Line1AtHt-16*ht);   canvas.lineTo(559, Line1AtHt-16*ht);
+		    canvas.moveTo(325, Line1AtHt-17*ht);   canvas.lineTo(559, Line1AtHt-17*ht);
+		    canvas.moveTo(325, Line1AtHt-18*ht);   canvas.lineTo(559, Line1AtHt-18*ht);
+		    
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line13, font), ltmargin+10, Line1AtHt-19*ht, 0);  
+		    canvas.moveTo(250, Line1AtHt-19*ht-2);   canvas.lineTo(559, Line1AtHt-19*ht-2);
+
+		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line5, font), ltmargin+10, Line1AtHt-20*ht, 0);  
+		    canvas.moveTo(175, Line1AtHt-20*ht-2);   canvas.lineTo(275, Line1AtHt-20*ht-2);
+
 		    
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, new Paragraph("Particulars", font), 210, Line1AtHt-5*ht+10, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_CENTER, new Paragraph("Amount", font), 475, Line1AtHt-5*ht+10, 0);
