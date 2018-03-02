@@ -542,29 +542,7 @@ public class FormFill extends JFrame {
 	            if(chckbxFirstPage.isSelected())      {  Bill.Print(); };
 				if(chckbxSecondPage.isSelected())     { Bill.Print1(); };
 				if(chckbxRelievingOrder.isSelected()) { Bill.Print2(); };
-	            
-//				Bill.Print();
-				
-/*				int result=JOptionPane.showOptionDialog(null, 
-				        "Would You Like To Print Next Page ?", 
-				        "Feedback", 
-				        JOptionPane.OK_CANCEL_OPTION, 
-				        JOptionPane.INFORMATION_MESSAGE, 
-				        null, 
-				        new String[]{"Yes I do", "No I don't"}, // this is the array
-				        "default");
-				if(result==JOptionPane.OK_OPTION) 	Bill.Print1();    */
-										
-/*				int result1=JOptionPane.showOptionDialog(null, 
-				        "Would You Like To Print Relieving Order ?", 
-				        "Feedback", 
-				        JOptionPane.OK_CANCEL_OPTION, 
-				        JOptionPane.INFORMATION_MESSAGE, 
-				        null, 
-				        new String[]{"Yes I do", "No I don't"}, // this is the array
-				        "default");
-				if(result1==JOptionPane.OK_OPTION) 	Bill.Print2();    */
-				
+	            				
 			}
 		});
 		
@@ -584,8 +562,13 @@ public class FormFill extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 //				dispose();
 //			cp.creatRemBillPdf();	
-//			cp.creatRelOrderPdf();
-			cp.creatRemBill2Pdf();	
+			cp.creatRelOrderPdf();
+//			cp.creatRemBill2Pdf();	
+            if(chckbxFirstPage.isSelected())      { cp.creatRemBillPdf();  };
+			if(chckbxSecondPage.isSelected())     { cp.creatRemBill2Pdf(); };
+			if(chckbxRelievingOrder.isSelected()) { cp.creatRelOrderPdf(); };
+
+			
 			}
 		});
 

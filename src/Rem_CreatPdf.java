@@ -30,7 +30,7 @@ public class Rem_CreatPdf {
 		this.FF = ff;
 	}
 	
-/*	public void creatRemBillPdf(){
+	public void creatRemBillPdf(){
 //		FF = new FormFill();
 		try{
 			
@@ -69,7 +69,7 @@ public class Rem_CreatPdf {
 			document.add(table);			
 		    PdfContentByte canvas = writer.getDirectContent();
 		    CMYKColor blackColor = new CMYKColor(0.f, 0.f, 0.f, 1.f);
-		    canvas.setColorStroke(blackColor);		*/        
+		    canvas.setColorStroke(blackColor);		        
 
 /*	        Rectangle rect0 = new Rectangle(36, 36, 559, 806);
 		    rect0.setBorder(Rectangle.BOX);
@@ -78,7 +78,7 @@ public class Rem_CreatPdf {
 	        rect0.setBorderWidth(1);
 	        canvas.rectangle(rect0);                */
 
-/*	        Rectangle rect1 = new Rectangle(475, 786, 559, 806);
+	        Rectangle rect1 = new Rectangle(475, 786, 559, 806);
 		    rect1.setBorder(Rectangle.BOX);
 	        rect1.setBorderWidth(1);
 	        canvas.rectangle(rect1);
@@ -250,10 +250,10 @@ public class Rem_CreatPdf {
 		catch(FileNotFoundException e){
 			e.printStackTrace();
 		}
-	  }                            */
+	  }                            
 
 	
-/*	public void creatRelOrderPdf(){
+	public void creatRelOrderPdf(){
 //		FF = new FormFill();
 		try{
 			
@@ -337,7 +337,7 @@ public class Rem_CreatPdf {
 		catch(FileNotFoundException e){
 			e.printStackTrace();
 		}
-	  }                             */
+	  }                             
 	
 
 	public void creatRemBill2Pdf(){
