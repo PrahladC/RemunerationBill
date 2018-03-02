@@ -337,7 +337,7 @@ public void Print1()
 	          pg.drawLine(S1+65, 142, 408, 142);        //  Horizontal Line - Signature of clerk
 	          pg.drawString("Date", x+350, 140);
 	          pg.drawLine(445, 142, 566, 142);        //  Horizontal Line in front of date
-	          pg.drawString("2) Head of the H.S.C. Brabch", x, LtMrg + (5*Space));
+	          pg.drawString("2) Head of the H.S.C. Branch", x, LtMrg + (5*Space));
 	          
 	          pg.drawString("Date", x+350, 160);	             	          
 	          pg.drawLine(250, 162, 408, LtMrg + (5*Space) + 2);        //  Horizontal Line - Head ofHSC Branch   

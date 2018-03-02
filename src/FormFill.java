@@ -583,8 +583,9 @@ public class FormFill extends JFrame {
 		btnPrintPdf.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 //				dispose();
-			cp.creatPdf();	
-				
+//			cp.creatRemBillPdf();	
+//			cp.creatRelOrderPdf();
+			cp.creatRemBill2Pdf();	
 			}
 		});
 
