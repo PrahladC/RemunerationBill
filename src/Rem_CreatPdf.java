@@ -303,7 +303,18 @@ public class Rem_CreatPdf {
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line9, font), 270, htOfheader1-6*ht, 0);
 		    canvas.moveTo(328, htOfheader1-6*ht-2);    canvas.lineTo(rtmargin, htOfheader1-6*ht-2);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(line10, font), ltmargin, htOfheader1-9*ht, 0);
-		    		    
+
+////    A  L  L    S  M  A  L  L    F  O  N  T     W  O  R  D  S		  
+		    
+	        Font font2 = new Font(FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+            String str1 = "( College )";
+            String str2 = "( Subject )";
+		    
+            ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(str1, font2), 4*ltmargin, htOfheader1-4*ht-10, 0);
+            ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(str2, font2), 5*ltmargin, htOfheader1-5*ht-10, 0);
+
+            
+		    
 /////   All data fro form fill
 		    
 		    String name = FF.ExaminerName.getText().toUpperCase();
@@ -319,12 +330,6 @@ public class Rem_CreatPdf {
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(startdate, font), 100, htOfheader1-6*ht, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(enddate, font), 195, htOfheader1-6*ht, 0);
 		    ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, new Paragraph(excepton, font), 330, htOfheader1-6*ht, 0);
-		    
-//		    canvas.moveTo(250, 806);    canvas.lineTo(250, 470);
-//		    canvas.moveTo(185, 806);    canvas.lineTo(185, 445);
-//		    canvas.moveTo(0, 100);    canvas.lineTo(595, 100);
-//		    canvas.moveTo(65, 465);    canvas.lineTo(530, 465);
-		    
 		    
 	        canvas.closePathStroke();       			
 			document.close();

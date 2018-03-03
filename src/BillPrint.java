@@ -408,7 +408,7 @@ public void Print2()
 	          int Center = (RBL - x)/2 + x ;
 	          String S1 = "C E R T I F I C A T E";
 	          String S2 = "TO WHOMSOEVER IT MAY CONCERN"; 
-	          String S3 = " has conducted Practical /"; 
+	          String S3 = " has conducted Practical / Project /"; 
 	          String S4 = "Oral Examination in "; 
 	          String S5 = "This is to certify that Mr/Mrs/Miss ";
 	          String S6 = "at our college, from ";
