@@ -315,10 +315,10 @@ public class Rem_CreatPdf {
 
             
 		    
-/////   All data fro form fill
+/////   All data from form fill
 		    
 		    String name = FF.ExaminerName.getText().toUpperCase();
-		    String nemofcollege = FF.COE.getText();
+		    String nemofcollege = FF.CollNemOfExaminer.getText();
 		    String startdate = FF.StartDate.getText();  
 		    String subject = FF.subject.getText().toUpperCase();
 		    String enddate = FF.EndDate.getText();
